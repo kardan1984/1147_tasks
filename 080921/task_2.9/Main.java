@@ -6,9 +6,13 @@ public class Main {
     public static void main(String[] args) {
         //напишите тут ваш код
         int [] arr = {2,3,4,5};
+        int count = 0;
         for (int i = 0; i < 4; i++) {
-            if (arr[i]==5) System.out.println("ДА");
-            else System.out.println("НЕТ");
+            if (arr[i]==5)
+                count++;
         }
+        if (count>0)
+        System.out.println("ДА");
+        else System.out.println("НЕТ");
     }
 }
