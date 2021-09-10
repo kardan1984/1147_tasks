@@ -5,11 +5,14 @@
 public class Main {
     public static void main(String[] args) {
         int a = 31;
-        for (int i = 1; i < a+1; i++) {
+        int count = 0;
+        for (int i = 2; i < a; i++) {
             if (a%i==0)
-                System.out.println("Число "+a+" делится на "+i+" - TRUE");
-            else
-                System.out.println("Число "+a+" не делится на "+i+" - FALSE");
+                count++;
         }
+        if (count>0)
+            System.out.println("TRUE");
+        else
+            System.out.println("FALSE");
     }
 }
