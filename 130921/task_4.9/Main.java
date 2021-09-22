@@ -9,11 +9,11 @@ public class Main {
         Person person2 = new Person("Николай", "Иванов", 68, null, null);
         Person person3 = new Person("Иван", "Петров", 65, null, null);
         Person person4 = new Person("Ирина", "Петрова", 64, null, null);
-        Person person5 = new Person("Василий", "Иванов", 30, person1, person2);
-        Person person6 = new Person("Наталья", "Иванова", 29, person4, person3);
+        Person person5 = new Person("Василий", "Иванов", 30, null, person2);
+        Person person6 = new Person("Наталья", "Иванова", 29, person4, null);
         Person person7 = new Person("Алексей", "Иванов", 12, person6, person5);
 
-        person1.info();
+        person7.info();
     }
 }
 
@@ -32,33 +32,24 @@ class Person{
     }
 
     void info(){
-        String info = "Меня зовут "+this.name+"\n"
+        String info = "Меня зовут "+this.name+" "+this.lastname+"\n"
                 +"Мой возраст: "+getAge()+" лет"+"\n";
 
 
         if(this.mother != null) {
             info += "Мою маму зовут " + this.mother.name + "\n";
-            if (this.mother.father != null) {
-                info += "Моего дедушку по маминой линии зовут " + this.mother.father.name + "\n";
-                if (this.mother.mother != null) {
-                    info += "Мою бабушку по маминой линии зовут " + this.mother.mother.name + "\n";
+            if (this.mother.father != null) info += "Моего дедушку по маминой линии зовут " + this.mother.father.name + "\n";
+            if (this.mother.mother != null) info += "Мою бабушку по маминой линии зовут " + this.mother.mother.name + "\n";
                 }
-            }
-        }
-            if (this.father != null) {
-                info += "Моего отца зовут " + this.father.name + "\n";
-                if (this.father.mother != null) {
-                    info += "Мою бабушку по папиной линии зовут " + this.father.mother.name + "\n";
-                    if (this.father.father != null) {
-                        info += "Моего дедушку по папиной линии зовут " + this.father.father.name + "\n";
-                    }
-                }
-            }
 
-            System.out.println(info);
+        if (this.father != null) {
+            info += "Моего отца зовут " + this.father.name + "\n";
+            if (this.father.mother != null) info += "Мою бабушку по папиной линии зовут " + this.father.mother.name + "\n";
+            if (this.father.father != null) info += "Моего дедушку по папиной линии зовут " + this.father.father.name + "\n";
+                }
+
+        System.out.println(info);
     }
-
-
 
     public Person getMother() {
         return mother;
