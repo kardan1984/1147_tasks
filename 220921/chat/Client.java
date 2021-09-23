@@ -23,7 +23,7 @@ public class Client {
                     try {
                         while (true){
                             String response = in.readUTF();
-                            System.out.println("Ответ сервера - "+response);
+                            System.out.println(response);
                         }
                     }catch (IOException e){
                         System.out.println("Соединение разорвано");
